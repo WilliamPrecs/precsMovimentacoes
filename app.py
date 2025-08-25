@@ -45,7 +45,7 @@ def testar_conexao_db():
 def carregar_dados_movimentacoes(data_inicio=None, data_fim=None):
     query = """
         SELECT id, municipio, data_movimentacao, saldo_anterior_valor, saldo_atualizado_valor
-        FROM movimentacoes
+        FROM Movimentations
         WHERE data_movimentacao IS NOT NULL
     """
 
@@ -71,7 +71,7 @@ def carregar_dados_movimentacoes(data_inicio=None, data_fim=None):
 
 @st.cache_data(ttl=60, show_spinner=False)
 def carregar_dados_brutos():
-    query = "SELECT * FROM movimentacoes ORDER BY data_movimentacao DESC, id DESC"
+    query = "SELECT * FROM Movimentations ORDER BY data_movimentacao DESC, id DESC"
     df = pd.read_sql(query, engine)
     return df
 
@@ -550,7 +550,7 @@ def main():
         
         query_paginada = f"""
             SELECT *
-            FROM movimentacoes
+            FROM Movimentations
             {filtro_sql}
             ORDER BY data_movimentacao {ordem_sql}, id {ordem_sql}
             LIMIT {limite_registros}
@@ -608,5 +608,6 @@ def main():
 
 if __name__ == "__main__":
     main()
+
 
 
