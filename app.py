@@ -16,10 +16,10 @@ load_dotenv()
 st.set_page_config("Comparação de Saldos", layout="wide")
 
 # Configuração do banco de dados
-DB_HOST = os.getenv("DB_HOST", "bdunicoprecs.c50cwuocuwro.sa-east-1.rds.amazonaws.com")
-DB_NAME = os.getenv("DB_NAME", "Movimentacoes")
-DB_USER = os.getenv("DB_USER", "postgres")
-DB_PASSWORD = os.getenv("DB_PASSWORD", "Q62^S7v<yK-\\5LHm2PxQ")
+DB_HOST = os.getenv("DB_HOST")
+DB_NAME = os.getenv("DB_NAME")
+DB_USER = os.getenv("DB_USER")
+DB_PASSWORD = os.getenv("DB_PASSWORD")
 DB_PORT = os.getenv("DB_PORT", "5432")
 
 DB_URL = f"postgresql://{DB_USER}:{DB_PASSWORD}@{DB_HOST}:{DB_PORT}/{DB_NAME}"
@@ -608,4 +608,5 @@ def main():
 
 if __name__ == "__main__":
     main()
+
 
