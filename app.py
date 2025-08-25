@@ -316,7 +316,7 @@ def main():
     # Header principal
     st.markdown("""
     <div class="header-container">
-        <div class="header-title">📊 Dashboard Precs</div>
+        <div class="header-title">📊 PRECS</div>
         <div class="header-subtitle">💰 Movimentações Financeiras Municipais | Análise Comparativa de Saldos</div>
     </div>
     """, unsafe_allow_html=True)
@@ -608,6 +608,7 @@ def main():
 
 if __name__ == "__main__":
     main()
+
 
 
 
