@@ -71,7 +71,7 @@ def carregar_dados_movimentacoes(data_inicio=None, data_fim=None):
 
 @st.cache_data(ttl=60, show_spinner=False)
 def carregar_dados_brutos():
-    query = "SELECT * FROM Movimentations ORDER BY data_movimentacao DESC, id DESC"
+    query = 'SELECT * FROM "Movimentations" ORDER BY data_movimentacao DESC, id DESC'
     df = pd.read_sql(query, engine)
     return df
 
@@ -550,7 +550,7 @@ def main():
         
         query_paginada = f"""
             SELECT *
-            FROM Movimentations
+            FROM "Movimentations"
             {filtro_sql}
             ORDER BY data_movimentacao {ordem_sql}, id {ordem_sql}
             LIMIT {limite_registros}
@@ -608,6 +608,7 @@ def main():
 
 if __name__ == "__main__":
     main()
+
 
 
 
