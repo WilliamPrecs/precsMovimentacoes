@@ -45,7 +45,7 @@ def testar_conexao_db():
 def carregar_dados_movimentacoes(data_inicio=None, data_fim=None):
     query = """
         SELECT id, municipio, data_movimentacao, saldo_anterior_valor, saldo_atualizado_valor
-        FROM Movimentations
+        FROM "Movimentations"
         WHERE data_movimentacao IS NOT NULL
     """
 
@@ -608,6 +608,7 @@ def main():
 
 if __name__ == "__main__":
     main()
+
 
 
 
